@@ -5,7 +5,10 @@ export default function App() {
   return (
    <div>
     <Navbar/>
+    <div className="pt-30">
     <Hero/>
+    </div>
+   
    </div>
   )
 }
