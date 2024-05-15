@@ -25,8 +25,8 @@ const Navbar = () => {
   return (
     <div className={`${!visible && 'hidden'} bg-black w-full z-100 fixed flex flex-col md:flex-row justify-between items-center h-24 px-4 text-white transition-all duration-500`}>
      <h1 className='w-full ml-40 md:w-auto text-3xl font-bold text-white'>MUSIC ACADEMY</h1>
-<div>
-  <ul className='md:flex-row flex flex-col mt-4 space-x-4 md:mt-0 md:ml-2 ml-24'>
+<div className='md:flex flex- justify-start ml-8'>
+  <ul className='md:flex-row flex flex-col mt-4 space-x-4 md:mt-0 md:ml-2'>
     <li className='p-4 hover:text-blue-500 text-lg'>Home</li>
     <li className='p-4 hover:text-blue-500 text-lg'>Find Your Guru</li>
     <li className='p-4 hover:text-blue-500 text-lg'>How It Works</li>

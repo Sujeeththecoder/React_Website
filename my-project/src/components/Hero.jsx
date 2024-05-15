@@ -3,7 +3,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className='pt-24 z-50 navbar-container bg-cover bg-center' style={{ backgroundImage: "url('/images/2.jpg')", backgroundPosition: 'center bottom', height: '1000px'}}>
+    <div className='pt-24 z-50 navbar-container bg-cover bg-center' style={{ backgroundImage: "url('/images/5.jpg')", backgroundPosition: 'center bottom', height: '1000px'}}>
     <div className='text-white'>
       <div className='w-full text-center items-center mt-40 mb-30 h-screen mx-auto flex flex-col text-bold'>
 <div className='font-bold text-2xl sm:text-4xl'>
@@ -13,7 +13,18 @@ function Hero() {
   <button className=' text-lg bg-white text-black py-1 px-4 border border-white hover:border-transparent rounded '>Book A Free Session Now</button>
   </div>
   
+  
   </div>
+  
+</div>
+<div className='text-center'>
+<p>
+  Value Props
+  </p>
+<br />
+<h1 className='font-bold text-3xl'>
+What we bring to the table?
+</h1>
 </div>
       </div>
     </div>
