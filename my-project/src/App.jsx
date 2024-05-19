@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Benefits from "./components/Benefits"
 import Video from "./components/Video"
+import Teachers from "./components/Teachers"
+import SimpleSteps from "./components/SimpleSteps"
 export default function App() {
   return (
    <div>
@@ -12,6 +14,8 @@ export default function App() {
     </div>
     <Benefits/>
     <Video/>
+    <Teachers/>
+    <SimpleSteps/>
    </div>
    
 
