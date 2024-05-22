@@ -5,6 +5,7 @@ import Benefits from "./components/Benefits"
 import Video from "./components/Video"
 import Teachers from "./components/Teachers"
 import SimpleSteps from "./components/SimpleSteps"
+import Form from "./components/Form"
 export default function App() {
   return (
    <div>
@@ -16,6 +17,7 @@ export default function App() {
     <Video/>
     <Teachers/>
     <SimpleSteps/>
+    <Form/>
    </div>
    
 
