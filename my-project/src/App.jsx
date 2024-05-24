@@ -6,6 +6,7 @@ import Video from "./components/Video"
 import Teachers from "./components/Teachers"
 import SimpleSteps from "./components/SimpleSteps"
 import Form from "./components/Form"
+import Footer from "./components/Footer"
 export default function App() {
   return (
    <div>
@@ -18,6 +19,7 @@ export default function App() {
     <Teachers/>
     <SimpleSteps/>
     <Form/>
+    <Footer/>
    </div>
    
 
