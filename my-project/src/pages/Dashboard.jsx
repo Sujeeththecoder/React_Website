@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import StarredTeachers from '../components/StarredTeachers';
 
 function Dashboard() {
   return (
     <div>
-      dashboard
+      <StarredTeachers/>
+      
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

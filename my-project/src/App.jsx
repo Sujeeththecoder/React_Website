@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
-      <div className="pt-30">
+      <div className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/find-your-guru" element={<FindYourGuru />} />
