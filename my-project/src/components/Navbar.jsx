@@ -39,6 +39,9 @@ const Navbar = () => {
           <li className='p-4 hover:text-blue-500 text-lg'>
             <Link to="/dashboard">My Dashboard</Link>
           </li>
+          <li className='p-4 hover:text-blue-500 text-lg'>
+            <Link to="/become-a-guru">Become a Guru</Link>
+          </li>
         </ul>
       </div>
 
@@ -58,6 +61,9 @@ const Navbar = () => {
         </li>
         <li className='p-4 border-b border-gray-600'>
           <Link to="/dashboard" onClick={handleNav}>My Dashboard</Link>
+        </li>
+        <li className='p-4 border-b border-gray-600'>
+          <Link to="/become-a-guru" onClick={handleNav}>Become a Guru</Link>
         </li>
       </ul>
     </div>
