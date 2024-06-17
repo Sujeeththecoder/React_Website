@@ -6,7 +6,7 @@ import FindYourGuru from './pages/FindYourGuru';
 import HowItWorks from './pages/HowItWorks';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-import BecomeAGuru from './components/BecomeAGuru';
+import BecomeAGuru from './pages/BecomeAGuru'
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/find-your-guru" element={<FindYourGuru />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/become-a-guru" element={<BecomeAGuru />} /> {/* Add the new route */}
+          <Route path="/become-a-guru" element={<BecomeAGuru />} /> 
         </Routes>
       </div>
       <Footer />
