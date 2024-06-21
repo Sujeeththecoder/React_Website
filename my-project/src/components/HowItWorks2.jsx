@@ -10,7 +10,7 @@ function HowItWorks2() {
       <div className='h-52 w-52 mt-6 text-white justify-center items-center text-center'>
       <img src="/images/create.svg" alt="" />
       <h1 className='font-bold text-lg mt-6'>Create</h1>
-      <p className='text-base font-medium mt-1'>Build your profile, showcase your skills, and decide your fee structure</p>
+      <p className='text-base   font-medium mt-1'>Build your profile, showcase your skills, and decide your fee structure</p>
       </div >
 
       <div className='h-40 w-40 -mt-10 text-white justify-center items-center text-center'>
