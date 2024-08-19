@@ -1,56 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import IndianClassical from './IndianClassical';
+import OtherComponent from './OtherComponent';
+import Western from './Western';
 
 function PickYourChoice() {
-  return (
-    <div className='min-h-screen bg-gray-400 flex items-center justify-center '>
-      <div className='absolute inset-0 backdrop-blur-sm'></div>
-      <div className='relative bg-white h-[700px] w-[800px] rounded-lg shadow-md mt-0 mb-8'>
-        <div className='flex flex-row ml-8 mt-8'>
-          <h1 className='text-2xl font-bold'>Pick your choice</h1>
-          <div className='text-lg ml-40 font-medium font-sans flex gap-x-6 mt-2'>
-            <p>Western</p>
-            <p>Indian Classical</p>
-            <p>Others</p>
-          </div>
-        </div>
-        <div className='grid grid-cols-4 gap-x-0 myGridContainer font-sans font-semibold' style={{ gridColumnGap: '6px' }}>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/21.png')" }}>
-            <h1 className='absolute hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Drums</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/22.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>piano</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/23.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Violin</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/24.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Ukulele</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/25.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Cajon</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/26.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Keyboard</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/27.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Harmonica</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/28.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Mandolin</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/29.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Double Bass</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/30.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Cello</h1>
-          </div>
-          <div className='relative mt-14 ml-12 bg-gray-600 rounded-lg shadow-lg bg-cover bg-center h-[120px] w-[120px]' style={{ backgroundImage: "url('/images/31.png')" }}>
-            <h1 className='absolute  hover:bg-orange-600 hover:text-white rounded-sm bottom-0 p-1 text-center w-full bg-white text-black'>Guitar</h1>
-          </div>
-        </div>
+  const [selectedChoice, setSelectedChoice] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-        <div className='w-full mt-6 ml-2 flex items-center justify-center text-center'>
-          <button className='text-white text-center hover:bg-orange-400 bg-orange-600 h-10 rounded-xl' style={{ width: '45rem' }}>Proceed</button>
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const choice = params.get('choice');
+    if (choice) {
+      setSelectedChoice(choice);
+    }
+  }, [location]);
+
+  const navigateToChoice = (choice) => {
+    setSelectedChoice(choice);
+    navigate(`?choice=${choice}`);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-400 flex flex-col items-center">
+      {/* Navbar Section */}
+      <div className="bg-white w-[800px] top-38 bottom-0 shadow-md z-10">
+        <div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Pick your choice</h1>
+          <div className="flex gap-x-6 text-lg font-medium">
+            <p onClick={() => navigateToChoice('Western')} className="cursor-pointer">Western</p>
+            <p onClick={() => navigateToChoice('IndianClassical')} className="cursor-pointer">Indian Classical</p>
+            <p onClick={() => navigateToChoice('Others')} className="cursor-pointer">Others</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="mt-4 w-full flex items-center justify-center">
+        <div className="relative bg-white h-[700px] w-[800px] rounded-lg shadow-md">
+          {selectedChoice === 'IndianClassical' && <IndianClassical />}
+          {selectedChoice === 'Others' && <OtherComponent />}
+          {selectedChoice === 'Western' && <Western />}
+          {!selectedChoice && (
+            <div className="p-8 text-center">
+              <h2 className="text-xl font-semibold">Please select a category from the above options.</h2>
+            </div>
+          )}
         </div>
       </div>
     </div>
